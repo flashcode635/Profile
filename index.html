@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramit Aggarwal - CS Student</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    :root {
+      --primary-color: #2ecc71;
+      --dark-bg: #2c3e50;
+      --light-bg: #ecf0f1;
+      --text-dark: #2c3e50;
+      --text-light: #ecf0f1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+
+    /* Header Styles */
+    header {
+      background: var(--dark-bg);
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(45deg, #2c3e50, #34495e);
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: slideUp 2s ease;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: slideUp 1s ease 0.3s backwards;
+    }
+
+    /* About Section */
+    .about {
+      /* padding: 5rem 0; */
+      background: white;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill {
+      background: var(--light-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 5rem 0;
+      background: var(--light-bg);
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        
+        gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 25vw;
+      margin-right: 50px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-image {
+      height: 200px;
+      background: #ddd;
+      overflow: hidden;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 0;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #27ae60;
+    }
+
+    /* Animations */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Ramit</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Hi, I'm Ramit Aggarwal</h1>
+          <p>Computer Science Student & Aspiring Developer</p>
+          <!-- <p>My interest include reading about latest tech trends in the fiels of web and cyber security.</p> -->
+          <div class="social-links">
+            <a href="#"><i class="hero" style="padding-right: 5px"></i></a>
+            <a href="#"
+              ><i class="fab fa-linkedin" style="padding-right: 5px"></i
+            ></a>
+            <a href="#"
+              ><i class="fab fa-twitter" style="padding-right: 5px"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              A passionate Computer Science student specializing in full-stack
+              development and deeply interested in the field of Cyber Security.
+            </p>
+            <p>
+              As a tech enthusiast i love to build projects and learn about new
+              technologies and concepts.
+            </p>
+          </div>
+          <div class="skills">
+            <span class="skill">Computer Network</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">C</span>
+            <span class="skill">C++</span>
+            <span class="skill">DataBase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid" style="display: flex">
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9qlyZAguSX-8mj8fdT98nD9_DMifxMy75Q&s"
+                alt=""
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce Platform</h3>
+              <p>Back-end of an e-commerce application using node.js</p>
+            </div>
+          </div>
+          <!-- project card 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9qlyZAguSX-8mj8fdT98nD9_DMifxMy75Q&s"
+                alt=""
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce Platform</h3>
+              <p>Back-end of an e-commerce application using node.js</p>
+            </div>
+          </div>
+          <!-- project cards  -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
+        >
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" style="height: 50px">
+            <p style="font-size: 15px">Send Message</p>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Reveal animations on scroll
+      window.addEventListener("scroll", reveal);
+
+      function reveal() {
+        const reveals = document.querySelectorAll(
+          ".section-title, .project-card"
+        );
+
+        reveals.forEach((element) => {
+          const windowHeight = window.innerHeight;
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active");
+          }
+        });
+      }
+
+      // Initial trigger
+      reveal();
+    </script>
+  </body>
+</html>
