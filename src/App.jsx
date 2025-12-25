@@ -131,8 +131,8 @@ function App() {
                 </div>
                 <div className="profile-stats">
                   <div className="stat">
-                    <span className="stat-number">3+</span>
-                    <span className="stat-label" style={{color:'#D3D3D3'}}>Years Learning</span>
+                    <span className="stat-number">1</span>
+                    <span className="stat-label" style={{color:'#D3D3D3'}}>Year Learning</span>
                   </div>
                   <div className="stat">
                     <span className="stat-number">10+</span>
