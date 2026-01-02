@@ -502,7 +502,7 @@ body {
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
@@ -529,21 +529,26 @@ body {
 
 .skill-card:hover {
   transform: translateY(-10px);
+
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .react-card:hover {
   border-color: #61dafb;
+    background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 20px 40px rgba(97, 218, 251, 0.2);
 }
 
 .node-card:hover {
   border-color: #68a063;
+    background-color: rgba(255, 255, 255, 0);
+
   box-shadow: 0 20px 40px rgba(104, 160, 99, 0.2);
 }
 
 .network-card:hover {
   border-color: #bb86fc;
+    background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 20px 40px rgba(187, 134, 252, 0.2);
 }
 
@@ -889,7 +894,12 @@ body {
   color: #f7df1e;
   border: 1px solid rgba(247, 223, 30, 0.3);
 }
+.tech-tag.link{
+  background-color: rgb(39, 250, 194,0.1);
+  color: rgb(39, 250, 194);
+    border: 1px solid rgb(39, 250, 194,0.3);
 
+} 
 .tech-tag.css {
   background: rgba(21, 114, 182, 0.1);
   color: #1572b6;
@@ -1015,7 +1025,7 @@ body {
 /* Footer */
 .footer {
   background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  padding: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 

@@ -3,7 +3,7 @@ import {
   Code, 
   Server, 
   Network, 
-  Github, 
+  Github, Linkedin,Twitter,
   Mail, 
   Phone, 
   MapPin, 
@@ -16,6 +16,13 @@ import {
   Star
 } from 'lucide-react';
 import './App.css';
+
+const DownloadPDF = ({ url, name }) => (
+  <a href={url} download={name}  rel="noreferrer">
+    
+    <span className="font-semibold text-sm">Download PDF</span>
+  </a>
+);
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -101,7 +108,7 @@ function App() {
             </div>
             
             <p className="hero-description">
-             Results-driven Web Developer skilled in end-to-end full-stack development. Designs, develops, and deploys robust web applications using modern technologies such as React.js Node.js  and tailwind CSS . Proven ability to enhance performance, improve user experience, and ensure maintainability through clean, efficient code.
+              I’m a web developer and cybersecurity enthusiast building fast, maintainable, and responsive applications with modern tech like Next.js, Prisma and tailwind CSS. Proven ability to enhance performance,clean architecture, performant UI  and ensure maintainability through clean, efficient code. 
             </p>
             
             <div className="hero-buttons">
@@ -113,7 +120,8 @@ function App() {
                 <ExternalLink className="btn-icon" />
               </button>
               <button className="btn btn-secondary">
-                <span>Download CV</span>
+                <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m2-5l5 5 5-5m-5 5V3"/></svg>
+                <DownloadPDF url={"https://drive.google.com/file/d/1BqLGhoFKh8q-kcBWv_6bLnzdqqyX3IGD/view?usp=sharing"} name={"Ramit_Aggarwal_resume.pdf"} />
               </button>
             </div>
           </div>
@@ -248,7 +256,7 @@ function App() {
           <div className="additional-skills">
             <h3 className="additional-title">Additional Technologies</h3>
             <div className="tech-stack">
-              {['JavaScript', 'HTML5', 'CSS3', 'Git', 'React.js','Tailwind', 'MongoDB', 'Express.js'].map((tech, index) => (
+              {['TypeScript','React.js','Tailwind', 'Next.js','Express.js','Zod','Prisma', 'Alpine.js','WebSockets', 'Git', 'MongoDB','PostGreSQL','CDN','Linux','AI SDK' ].map((tech, index) => (
                 <span key={tech} className="tech-badge" style={{ animationDelay: `${index * 0.1}s` }}>
                   {tech}
                 </span>
@@ -300,13 +308,14 @@ function App() {
               <div className="project-content">
                 <h3 className="project-title">Tic-Tac-Toe Game</h3>
                 <p className="project-description">
-                  Interactive game built with React.js featuring smart AI opponent, 
-                  game state management, and responsive design with smooth animations.
+                  Built a zero-build web app using Alpine.js and Tailwind CSS. Refactored legacy code into declarative state, cutting the codebase by 40% and boosting rendering performance.
                 </p>
                 <div className="project-tech">
-                  <span className="tech-tag react">React.js</span>
+                  <span className="tech-tag responsive">Alpine.js</span>
+                  <span className="tech-tag css">Tailwind CSS</span>
                   <span className="tech-tag js">JavaScript</span>
-                  <span className="tech-tag css">CSS3</span>
+                  <span className="tech-tag link">CDN</span>
+
                 </div>
                 <div className="project-actions">
                   <button className="btn btn-primary btn-small" onClick={()=>{
@@ -405,7 +414,7 @@ function App() {
                 <Mail />
               </div>
               <h3>Email</h3>
-              <p>ramit.aggarwal2000@gmail.com</p>
+              <p>aggramit42tech@gmail.com</p>
               <div className="contact-hover-effect"></div>
             </div>
             
@@ -435,6 +444,12 @@ function App() {
             <a href="https://mail.google.com/mail/u/0/?fs=1&to=ramit.aggarwal2000@gmail.com&su=Hello&body=Hi+there!&tf=cm" className="social-link">
               <Mail />
             </a>
+            <a href="https://www.linkedin.com/in/ramit-aggarwal-66a853280/" className="social-link">
+              <Linkedin />
+            </a>
+            <a href="https://x.com/aggramit476282" className="social-link">
+              <Twitter />
+            </a>
           </div>
         </div>
       </section>
@@ -442,7 +457,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2024 Ramit Aggarwal. Crafted with React.js and Tailwind CSS.</p>
+          <p>© 2024 Ramit Aggarwal. All rights reserved.</p>
           <div className="footer-links">
             <Star className="footer-icon" />
           </div>
