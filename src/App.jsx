@@ -418,14 +418,14 @@ function App() {
               <div className="contact-hover-effect"></div>
             </div>
             
-            <div className="contact-card">
+            {/* <div className="contact-card">
               <div className="contact-icon">
                 <Phone />
               </div>
               <h3>Phone</h3>
               <p>+91 9870161103</p>
               <div className="contact-hover-effect"></div>
-            </div>
+            </div> */}
             
             <div className="contact-card">
               <div className="contact-icon">
