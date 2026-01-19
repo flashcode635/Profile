@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Code, 
-  Server, 
-  Network, 
-  Github, Linkedin,Twitter,
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Code,
+  Server,
+  Network,
+  Github, Linkedin, Twitter,
+  Mail,
+  Phone,
+  MapPin,
   Calendar,
   ExternalLink,
   User,
@@ -16,13 +16,15 @@ import {
   Star
 } from 'lucide-react';
 import './App.css';
+import ContactSection from './components/component';
 
 const DownloadPDF = ({ url, name }) => (
-  <a href={url} download={name}  rel="noreferrer">
-    
-    <span className="font-semibold text-sm">Download PDF</span>
+  <a href={url} download={name} rel="noreferrer">
+
+    <span className="font-semibold text-sm">Resume </span>
   </a>
 );
+
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,11 +32,11 @@ function App() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const handleScroll = () => {
       const sections = ['hero', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
-      
+
       sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -86,16 +88,16 @@ function App() {
             ))}
           </div>
         </div>
-        
+
         <div className={`hero-content ${isVisible ? 'fade-in' : ''}`}>
           <div className="hero-text">
             <div className="hero-greeting">
               <span className="greeting-text">Hello, I'm</span>
             </div>
             <h1 className="hero-name">
+              {/* Ramit Aggarwal */}
               <span className="name-part pr-5">Ramit</span>
               <span className="name-part delay-1">Aggarwal</span>
-              {/* Ramit Aggarwal */}
             </h1>
             <div className="hero-title">
               <span className="title-text">B.Tech Student</span>
@@ -106,45 +108,45 @@ function App() {
               <Calendar className="subtitle-icon" />
               <span>3rd Year Computer Science Engineering</span>
             </div>
-            
+
             <p className="hero-description">
-              I’m a web developer and cybersecurity enthusiast building fast, maintainable, and responsive applications with modern tech like Next.js, Prisma and tailwind CSS. Proven ability to enhance performance,clean architecture, performant UI  and ensure maintainability through clean, efficient code. 
+              I’m a web developer and cybersecurity enthusiast building fast, maintainable, and responsive applications with modern tech like Next.js, Prisma and tailwind CSS. Proven ability to enhance performance,clean architecture, performant UI  and ensure maintainability through clean, efficient code.
             </p>
-            
+
             <div className="hero-buttons">
-              <button 
+              <button
                 className="btn btn-primary"
                 onClick={() => scrollToSection('projects')}
               >
-                <span>View Projects</span>
+                <span> Projects</span>
                 <ExternalLink className="btn-icon" />
               </button>
               <button className="btn btn-secondary">
-                <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m2-5l5 5 5-5m-5 5V3"/></svg>
+                <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m2-5l5 5 5-5m-5 5V3" /></svg>
                 <DownloadPDF url={"https://drive.google.com/file/d/1BqLGhoFKh8q-kcBWv_6bLnzdqqyX3IGD/view?usp=sharing"} name={"Ramit_Aggarwal_resume.pdf"} />
               </button>
             </div>
           </div>
-          
+
           <div className="hero-visual">
-            <div className="profile-card" style={{backdropFilter:'blur(30px)'}}>
-              <div className="card-glow" style={{ opacity: '0.6'}}></div>
+            <div className="profile-card" style={{ backdropFilter: 'blur(30px)' }}>
+              <div className="card-glow" style={{ opacity: '0.6' }}></div>
               <div className="card-content">
                 <div className="profile-avatar">
                   <Code className="avatar-icon" />
                 </div>
                 <div className="profile-info">
                   <h3>Web Developer</h3>
-                  <p style={{color:'#D3D3D3'}}>BTech CSE Student</p>
+                  <p>BTech CSE Student</p>
                 </div>
                 <div className="profile-stats">
                   <div className="stat">
                     <span className="stat-number">1</span>
-                    <span className="stat-label" style={{color:'#D3D3D3'}}>Year Learning</span>
+                    <span className="stat-label">Year Learning</span>
                   </div>
                   <div className="stat">
                     <span className="stat-number">10+</span>
-                    <span className="stat-label" style={{color:'#D3D3D3'}}>Projects</span>
+                    <span className="stat-label">Projects</span>
                   </div>
                 </div>
               </div>
@@ -154,7 +156,7 @@ function App() {
             </div>
           </div>
         </div>
-        
+
         <div className="scroll-indicator" onClick={() => scrollToSection('skills')}>
           <ChevronDown className="scroll-icon" />
         </div>
@@ -169,7 +171,7 @@ function App() {
               Specialized in modern web technologies with hands-on experience in full-stack development
             </p>
           </div>
-          
+
           <div className="skills-grid">
             <div className="skill-card react-card">
               <div className="skill-header">
@@ -182,7 +184,7 @@ function App() {
                 </div>
               </div>
               <p className="skill-description">
-                Building dynamic, interactive user interfaces with modern React  
+                Building dynamic, interactive user interfaces with modern React
                 hooks, and state management. Experienced in component designing and optimization.
               </p>
               <div className="skill-progress">
@@ -209,7 +211,7 @@ function App() {
                 </div>
               </div>
               <p className="skill-description">
-                Server-side development with Express.js, building RESTful APIs, 
+                Server-side development with Express.js, building RESTful APIs,
                 authentication systems, and database integration with modern practices.
               </p>
               <div className="skill-progress">
@@ -236,7 +238,7 @@ function App() {
                 </div>
               </div>
               <p className="skill-description">
-                Understanding of network protocols, TCP/IP stack, HTTP/HTTPS, 
+                Understanding of network protocols, TCP/IP stack, HTTP/HTTPS,
                 DNS resolution, and network security fundamentals.
               </p>
               <div className="skill-progress">
@@ -256,7 +258,7 @@ function App() {
           <div className="additional-skills">
             <h3 className="additional-title">Additional Technologies</h3>
             <div className="tech-stack">
-              {['TypeScript','React.js','Tailwind', 'Next.js','Express.js','Zod','Prisma', 'Alpine.js','WebSockets', 'Git', 'MongoDB','PostGreSQL','CDN','Linux','AI SDK' ].map((tech, index) => (
+              {['TypeScript', 'React.js', 'Tailwind', 'Next.js', 'Express.js', 'Zod', 'Prisma', 'Alpine.js', 'WebSockets', 'Git', 'MongoDB', 'PostGreSQL', 'CDN', 'Linux', 'AI SDK'].map((tech, index) => (
                 <span key={tech} className="tech-badge" style={{ animationDelay: `${index * 0.1}s` }}>
                   {tech}
                 </span>
@@ -275,7 +277,7 @@ function App() {
               Showcasing practical applications of web development skills and creative problem-solving
             </p>
           </div>
-          
+
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-image">
@@ -290,14 +292,14 @@ function App() {
                 </div>
                 <div className="project-overlay">
                   <div className="project-links">
-                    <button className="project-link" onClick={ ()=>{
-                        window.open('https://github.com/flashcode635/Tic-tac-toe','_blank')
-                      }}>
+                    <button className="project-link" onClick={() => {
+                      window.open('https://github.com/flashcode635/Tic-tac-toe', '_blank')
+                    }}>
                       <Github />
                     </button>
                     <button className="project-link" onClick={(
-                      ()=>{
-                        window.open('https://tic-tac-toe-tau-six-86.vercel.app/','_blank')
+                      () => {
+                        window.open('https://tic-tac-toe-tau-six-86.vercel.app/', '_blank')
                       }
                     )}>
                       <ExternalLink />
@@ -311,21 +313,21 @@ function App() {
                   Built a zero-build web app using Alpine.js and Tailwind CSS. Refactored legacy code into declarative state, cutting the codebase by 40% and boosting rendering performance.
                 </p>
                 <div className="project-tech">
-                  <span className="tech-tag responsive">Alpine.js</span>
-                  <span className="tech-tag css">Tailwind CSS</span>
-                  <span className="tech-tag js">JavaScript</span>
-                  <span className="tech-tag link">CDN</span>
-
+                  { ['Alpine.js', 'Tailwind CSS', 'JavaScript', 'CDN Link'].map((tech, index) => (
+                    <span key={tech} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
                 <div className="project-actions">
-                  <button className="btn btn-primary btn-small" onClick={()=>{
+                  <button className="btn btn-primary btn-small" onClick={() => {
                     window.open('https://tic-tac-toe-tau-six-86.vercel.app/', '_blank')
                   }}>
                     Live Demo
                   </button>
                   <button className="btn btn-secondary btn-small" onClick={
-                    ()=>{
-                      window.open('https://github.com/flashcode635/Tic-tac-toe','_blank');
+                    () => {
+                      window.open('https://github.com/flashcode635/Tic-tac-toe', '_blank');
                     }
                   }>
                     Source Code
@@ -352,13 +354,13 @@ function App() {
                 </div>
                 <div className="project-overlay">
                   <div className="project-links">
-                    <button className="project-link" onClick={()=>{
-                        window.open('https://github.com/flashcode635/hacSec-website', '_blank');
+                    <button className="project-link" onClick={() => {
+                      window.open('https://github.com/flashcode635/hacSec-website', '_blank');
                     }}>
                       <Github />
                     </button>
-                    <button className="project-link" onClick={()=>{
-                        window.open('https://democonfig.netlify.app/', '_blank');
+                    <button className="project-link" onClick={() => {
+                      window.open('https://democonfig.netlify.app/', '_blank');
                     }}>
                       <ExternalLink />
                     </button>
@@ -372,21 +374,23 @@ function App() {
                   service showcases, contact forms, and professional landing pages.
                 </p>
                 <div className="project-tech">
-                  <span className="tech-tag react">React.js</span>
-                  <span className="tech-tag css">Tailwind CSS</span>
-                  <span className="tech-tag responsive">Responsive</span>
+                  { ['React.js', 'Tailwind CSS', 'Responsive'].map((tech, index) => (
+                    <span key={tech} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
                 <div className="project-actions">
-                  <button className="btn btn-primary btn-small" onClick={()=>{
+                  <button className="btn btn-primary btn-small" onClick={() => {
                     window.open('https://democonfig.netlify.app/', '_blank');
                   }} >
                     Live Demo
                   </button>
 
                   <button className="btn btn-secondary btn-small" onClick={
-                    ()=>{
+                    () => {
 
-                      window.open('https://github.com/flashcode635/hacSec-website','_blank')
+                      window.open('https://github.com/flashcode635/hacSec-website', '_blank')
                     }
                   }>
                     Source Codes
@@ -399,65 +403,75 @@ function App() {
       </section>
 
       {/* Contact Section */}
+
       <section id="contact" className="contact-section">
         <div className="section-container">
           <div className="section-header">
             <h2 className="section-title">Let's Connect</h2>
-            <p className="section-subtitle">
-              Open to opportunities, collaborations, and discussions about technology
-            </p>
+            <p className='section-subtitle'> Available for Full-stack roles; always excited to work on new challenges. Whether you have a specific project in mind or just want to explore possibilities, let's start the conversation. </p>
           </div>
-          
-          <div className="contact-grid">
-            <div className="contact-card">
-              <div className="contact-icon">
-                <Mail />
-              </div>
-              <h3>Email</h3>
-              <p>aggramit42tech@gmail.com</p>
-              <div className="contact-hover-effect"></div>
-            </div>
-            
-            {/* <div className="contact-card">
-              <div className="contact-icon">
-                <Phone />
-              </div>
-              <h3>Phone</h3>
-              <p>+91 9870161103</p>
-              <div className="contact-hover-effect"></div>
-            </div> */}
-            
-            <div className="contact-card">
-              <div className="contact-icon">
-                <MapPin />
-              </div>
-              <h3>Location</h3>
-              <p>India</p>
-              <div className="contact-hover-effect"></div>
-            </div>
+          <ContactSection />
+
+          <div className="section-header">
+            <h2 className="section-title">Other Contacts</h2>
           </div>
-          
+          {/* social links ,  */}
           <div className="social-links">
-            <a href="https://github.com/flashcode635" className="social-link">
-              <Github />
-            </a>
-            <a href="https://mail.google.com/mail/u/0/?fs=1&to=ramit.aggarwal2000@gmail.com&su=Hello&body=Hi+there!&tf=cm" className="social-link">
-              <Mail />
-            </a>
-            <a href="https://www.linkedin.com/in/ramit-aggarwal-66a853280/" className="social-link">
-              <Linkedin />
-            </a>
-            <a href="https://x.com/aggramit476282" className="social-link">
-              <Twitter />
-            </a>
+
+            {/* github */}
+            <div className='link-container'>
+              <a href="https://github.com/flashcode635" className="social-link">
+                <Github />
+              </a>
+              <p>Github</p>
+            </div>
+
+            {/* email */}
+            <div className='link-container'>
+
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=ramit.aggarwal2000@gmail.com&su=Hello&body=Hi+there!&tf=cm" className="social-link">
+                <Mail />
+              </a>
+              <p>Mail</p>
+            </div>
+
+            {/* Linkedin */}
+            <div className='link-container'>
+
+              <a href="https://www.linkedin.com/in/ramit-aggarwal-66a853280/" className="social-link">
+                <Linkedin />
+              </a>
+              <p>Linkedin</p>
+            </div>
+
+            {/* twitter */}
+            <div className='link-container'>
+              <a href="https://x.com/aggramit476282" className="social-link">
+                {/* <Twitter /> */}
+                <svg viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="currentColor" />
+                </svg>
+
+
+              </a>
+              <p className='w-full'>X /Twitter</p>
+            </div>
+
+
+
+
+
+
           </div>
         </div>
       </section>
 
+
+
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2024 Ramit Aggarwal. All rights reserved.</p>
+          <p>© 2026 Ramit Aggarwal. All rights reserved.</p>
           <div className="footer-links">
             <Star className="footer-icon" />
           </div>
