@@ -328,7 +328,7 @@ function App() {
                     </button>
                     <button
                       className="w-12 h-12 bg-[rgba(49,98,99,0.16)] border border-[rgba(9,106,109,0.751)] rounded-full flex items-center justify-center text-accent-contrast cursor-pointer transition-all duration-300 hover:bg-accent-soft hover:text-accent-contrast hover:scale-110"
-                      onClick={() => window.open('https://tic-tac-toe-tau-six-86.vercel.app/', '_blank')}
+                      onClick={() => window.open('https://code-optimisation-competition.vercel.app/', '_blank')}
                     >
                       <ExternalLink />
                     </button>
