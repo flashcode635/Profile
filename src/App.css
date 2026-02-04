@@ -1,5 +1,5 @@
 /* Minimal CSS for complex hover effects with pseudo-elements */
-
+/*  */
 .nav-link-hover::before {
   content: '';
   position: absolute;
