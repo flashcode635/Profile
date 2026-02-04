@@ -137,7 +137,7 @@ function App() {
               </button>
               <button className="group relative overflow-hidden flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold cursor-pointer transition-all duration-300 bg-transparent text-accent border-2 border-accent hover:bg-[rgba(49,98,99,0.12)] hover:text-accent hover:-translate-y-0.5 btn-hover">
                 <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m2-5l5 5 5-5m-5 5V3" /></svg>
-                <DownloadPDF url={"https://drive.google.com/file/d/1BqLGhoFKh8q-kcBWv_6bLnzdqqyX3IGD/view?usp=sharing"} name={"Ramit_Aggarwal_resume.pdf"} />
+                <DownloadPDF url={"https://drive.google.com/file/d/1eX0-VYKKzwLiQ_X89OrNYxpiqXs5GIB0/view?usp=sharing"} name={"Ramit_Aggarwal_resume.pdf"} />
               </button>
             </div>
           </div>
@@ -336,9 +336,9 @@ function App() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-[1.625rem] font-semibold text-text mb-4 tracking-[-0.01em] leading-[1.3]">Tic-Tac-Toe Game</h3>
+                <h3 className="text-[1.625rem] font-semibold text-text mb-4 tracking-[-0.01em] leading-[1.3]">Optimized Game</h3>
                 <p className="text-muted leading-[1.6] mb-6">
-                  Built a zero-build web app using Alpine.js and Tailwind CSS. Refactored legacy code into declarative state, cutting the codebase by 40% and boosting rendering performance.
+                 A zero-dependency Alpine.js architecture, reducing file size to 100 lines. Refactored legacy code into declarative state, slashing the codebase by 40% while optimizing main-thread performance.
                 </p>
                 <div className="flex gap-2 mb-8 flex-wrap">
                   {['Alpine.js', 'Tailwind CSS', 'JavaScript', 'CDN Link'].map((tech) => (
